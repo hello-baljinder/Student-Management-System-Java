@@ -10,6 +10,24 @@ class StudentClass
 		this.name=name;
 		this.marks=marks;
 	}
+	public int getId(){
+		return id;
+	}
+	public String getName(){
+		return name;
+	}
+	public double getMarks(){
+		return marks;
+	}
+	public void setId(int id){
+		this.id=id;
+	}
+	public void setName(String name){
+		this.name=name;
+	}
+	public void setMarks(double marks){
+		this.marks=marks;
+	}
 	public void display()
 	{
 		System.out.println("ID: "+id+" Name: "+name+" Marks: "+marks);
@@ -56,10 +74,10 @@ class StudentManagement
 			int search = sc.nextInt();
 			for(StudentClass s : student)
 			{
-				if(s.id==search)
+				if(s.getId()==search)
 				{
 					System.out.println("Student found!!");
-					System.out.println("ID: "+s.id+" Name: "+s.name+" Marks: "+s.marks);
+					System.out.println("ID: "+s.getId()+" Name: "+s.getName()+" Marks: "+s.getMarks());
 				}
 			}
 			break;
@@ -68,11 +86,10 @@ class StudentManagement
 			int updateId = sc.nextInt();
 			for(StudentClass s : student)
 			{
-			   if(s.id==updateId)
+			   if(s.getId()==updateId)
 			   {
 				System.out.println("Enter Marks: ");
-				s.marks=sc.nextDouble();
-				
+				s.setMarks(sc.nextDouble());
 			   }
 			}
 			break;
@@ -83,7 +100,7 @@ class StudentManagement
 			while(itr.hasNext())
 			{
 				StudentClass s = (StudentClass) itr.next();
-				if(s.id==delId)
+				if(s.getId()==delId)
 				{
 				   itr.remove();
 				}
